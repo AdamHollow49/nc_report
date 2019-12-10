@@ -15,7 +15,7 @@ try:
     sheetnum = wbwork.sheetnames.index('FINISHED GOODS 2020')
     sheet = wbwork.sheets[sheetnum]
 except ValueError as e:
-    print("Error: No sheet nammed 'FINISHED GOODS 2020' within workbook")
+    print("Error: No sheet named 'FINISHED GOODS 2020' within workbook")
 
 
 def load_Title():  # load title date to title storage array
