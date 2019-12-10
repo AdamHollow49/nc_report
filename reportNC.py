@@ -11,7 +11,11 @@ daysNC = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
 dayTrns = {0: 'Monday', 1: 'Tuesday', 2: 'Wednesday', 3: 'Thursday', 4: 'Friday', 5: 'Saturday', 6: 'Sunday'}
 
 wbwork = load_workbook(filename="L140 NC SPREADSHEET.xlsx", data_only=True)  # find NC spreadsheet
-sheet = wbwork.sheets['FINISHED GOODS']  # apply focus to worksheet
+try:
+    sheetnum = wbwork.sheetnames.index('FINISHED GOODS 2020')
+    sheet = wbwork.sheets[sheetnum]
+except ValueError as e:
+    print("Error: No sheet nammed 'FINISHED GOODS 2020' within workbook")
 
 
 def load_Title():  # load title date to title storage array
