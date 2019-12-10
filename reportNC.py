@@ -10,8 +10,8 @@ import re
 daysNC = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
 dayTrns = {0: 'Monday', 1: 'Tuesday', 2: 'Wednesday', 3: 'Thursday', 4: 'Friday', 5: 'Saturday', 6: 'Sunday'}
 
-wbwork = load_workbook(filename="caw_wb.xlsx", data_only=True)  # find NC spreadsheet
-sheet = wbwork.sheets[0]  # apply focus to worksheet
+wbwork = load_workbook(filename="L140 NC SPREADSHEET.xlsx", data_only=True)  # find NC spreadsheet
+sheet = wbwork.sheets['FINISHED GOODS']  # apply focus to worksheet
 
 
 def load_Title():  # load title date to title storage array
@@ -39,7 +39,7 @@ rows = 0
 
 def load_due_dates():  # load due dates
 
-    rowTrace = 3  # row where due dates start
+    rowTrace = 3  # row where due dates startwwww
     while sheet['{x}'.format(x=confCol) + str(rowTrace)].value:
         if type(sheet['{x}'.format(x=raisedCol) + str(rowTrace)].value) == datetime:
             daysNC[sheet['{x}'.format(x=raisedCol) + str(rowTrace)].value.weekday()] += 1
